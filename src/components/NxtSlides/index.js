@@ -1,6 +1,5 @@
 import SlidesContext from '../../context/SlidesContext'
 import SelectedSlide from '../SelectedSlide'
-
 import SlideItem from '../SlideItem'
 import './index.css'
 
@@ -31,7 +30,7 @@ const NxtSlides = () => (
               <p>New</p>
             </button>
             <div className="slides-main-container">
-              <ul className="slides-list-items">
+              <ol className="slides-list-items">
                 {slidesList.map(each => {
                   const index = slidesList.indexOf(each)
                   return (
@@ -42,7 +41,7 @@ const NxtSlides = () => (
                     />
                   )
                 })}
-              </ul>
+              </ol>
               <SelectedSlide />
             </div>
           </div>

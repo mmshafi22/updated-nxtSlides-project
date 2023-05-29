@@ -14,6 +14,7 @@ const SlideItem = props => {
               id === activeSlide.id ? 'active-color' : ''
             }`}
             onClick={() => changeSlide(slideDetails)}
+            testid={`slideTab${num}`}
           >
             <p>{num}</p>
             <div className="slide-text">

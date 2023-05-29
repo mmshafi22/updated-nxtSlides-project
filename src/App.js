@@ -67,9 +67,17 @@ class App extends Component {
       heading: 'Heading',
       description: 'Description',
     }
+    const {slidesList, activeSlide} = this.state
+    const index = slidesList.indexOf(activeSlide)
     this.setState(prev => ({
-      slidesList: [...prev.slidesList, newSlide],
+      slidesList: [
+        ...prev.slidesList.slice(0, index + 1),
+        newSlide,
+        ...prev.slidesList.slice(index + 1, prev.slidesList.length),
+      ],
       activeSlide: newSlide,
+      headingFocus: false,
+      descriptionFocus: false,
     }))
   }
 
